@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mysql_fbmashup"
+  },
+  "AccessToken": {
+    "dataSource": "mysql_fbmashup",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mysql_fbmashup",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mysql_fbmashup",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mysql_fbmashup",
+    "public": false
+  },
+  "frame": {
+    "dataSource": "mysql_fbmashup",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "category": {
+    "dataSource": "mysql_fbmashup",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "sub_category": {
+    "dataSource": "mysql_fbmashup",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "admin": {
+    "dataSource": "mysql_fbmashup",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  }
+}

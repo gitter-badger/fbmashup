@@ -1,0 +1,84 @@
+{
+  "name": "frame",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "sub_category": {
+      "type": "number",
+      "required": true,
+      "index": true
+    },
+    "created_by": {
+      "type": "number",
+      "required": true,
+      "index": true
+    },
+    "share_count": {
+      "type": "number",
+      "required": true,
+      "index": false
+    },
+    "female_share_count": {
+      "type": "number",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "id": false,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "category": {
+      "type": "number",
+      "required": true,
+      "index": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parent_category": {
+      "type": "belongsTo",
+      "model": "category",
+      "foreignKey": "category"
+    },
+    "child_category": {
+      "type": "belongsTo",
+      "model": "sub_category",
+      "foreignKey": "sub_category"
+    },
+    "created_admin": {
+      "type": "belongsTo",
+      "model": "admin",
+      "foreignKey": "created_by"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
